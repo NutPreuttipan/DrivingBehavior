@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='SwiftDrivingBehaviorTests.xctest' tests='3' failures='0'>
+  <testsuite name='SwiftDrivingBehaviorTests.SwiftDrivingBehaviorTests' tests='3' failures='0'>
+    <testcase classname='SwiftDrivingBehaviorTests.SwiftDrivingBehaviorTests' name='testBasicMethod1' time='0.001'/>
+    <testcase classname='SwiftDrivingBehaviorTests.SwiftDrivingBehaviorTests' name='testBasicMethod2' time='0.000'/>
+    <testcase classname='SwiftDrivingBehaviorTests.SwiftDrivingBehaviorTests' name='testBasicMethod3' time='0.000'/>
+  </testsuite>
+</testsuites>
