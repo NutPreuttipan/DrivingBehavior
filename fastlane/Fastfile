@@ -24,11 +24,23 @@ platform :ios do
 
 
 
-  desc "Description for Unit Test"
+  desc "Description for Build IPA "
   lane :beta do
     # increment_build_number
     build_app(scheme: "SwiftDrivingBehavior",
               workspace: "SwiftDrivingBehavior.xcworkspace",
               include_bitcode: true)
+
+  end
+
+  desc "Description for distribute to firebase"
+  lane :firebase do 
+    firebase_app_distribution(
+      app: "1:178573492478:ios:46af9d89d1bf1e34ace5af",
+      testers: "terrorize.nut@gmail.com",
+      ipa_path: "./SwiftDrivingBehavior.ipa",
+      release_notes: "Lots of amazing new features to test out!",
+      firebase_cli_path: "/usr/local/bin/firebase"
+    )
   end
 end

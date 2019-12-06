@@ -25,7 +25,12 @@ Description for Unit Test
 ```
 fastlane ios beta
 ```
-Description for Unit Test
+Description for Build IPA 
+### ios firebase
+```
+fastlane ios firebase
+```
+Description for distribute to firebase
 
 ----
 
