@@ -43,6 +43,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let file = "logfile.txt"
     
     override func viewDidLoad() {
+        
+        print("Test scm pulling from jenkins")
         super.viewDidLoad()
         
         ref = Database.database().reference().child(UserDefaults.standard.value(forKey: "deviceName") as! String)
