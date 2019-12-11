@@ -1,28 +1,34 @@
 pipeline {
     agent any
+
+    environment {
+        // Fastlane Environment Variables
+        LC_ALL = "en_US.UTF-8"
+        LANG = "en_US.UTF-8"
+    }
       stages {
-
-      stage('One') {
+        stage('Checkout') {
           steps {
-              echo 'hi, this tis steps one from jenkins file'
+            checkout scm
           }
-      }
-
-      stage('Checkout') {
-        steps {
-          checkout scm
         }
-      }
 
-      stage('Running Tests') {
+        stage('Dependecies') {
           steps {
-            parallel (
-              "Unit Tests": {
-                sh 'echo "Unit Tests"'
-                sh 'fastlane test'
-              }
-            )
+            sh '/usr/local/bin/pod install'
           }
-      }
+        }
+
+        stage('Running Tests') {
+            steps {
+              parallel (
+                "SwiftDrivingBehavior": {
+                  sh 'fastlane test'
+                  sh 'fastlane beta'
+                  sh 'fastlane firebase'
+                }
+              )
+            }
+        }
     }
 }

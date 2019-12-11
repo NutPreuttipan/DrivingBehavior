@@ -34,15 +34,13 @@ platform :ios do
   end
 
   desc "Description for distribute to firebase"
-  lane :firebase do 
+  lane :firebase do
     firebase_app_distribution(
       app: "1:178573492478:ios:46af9d89d1bf1e34ace5af",
       testers: "terrorize.nut@gmail.com",
-      ipa_path: "./SwiftDrivingBehavior.ipa",
+      ipa_path: "/Users/dev/.jenkins/workspace/DrivingBehaviorPipeline/SwiftDrivingBehavior.ipa",
       release_notes: "Lots of amazing new features to test out!",
       firebase_cli_path: "/usr/local/bin/firebase"
     )
   end
 end
-
-
