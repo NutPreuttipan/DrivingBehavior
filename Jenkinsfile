@@ -1,18 +1,31 @@
 pipeline {
     agent any
       stages {
-        stage('One') {
+        stage('Complie') {
             steps {
-                echo 'hi, this tis steps one from jenkins file'
+                echo 'Complie successful'
             }
         }
-        stage('Two') {
+        
+        stage('Unit-test') {
             steps {
-                input('Do you want to proceed?')
+                echo 'Unit-test Passed successful'
+            }
+        }
+        
+        stage('Quality-gate') {
+            steps {
+                echo 'SonarQube Quality gate Passed successful'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Pass!'
             }
         }
 
-        stage('Three') {
+        stage('Test') {
             when {
                 not {
                   branch "master"
@@ -24,5 +37,23 @@ pipeline {
         }
 
       }
+      
+    post {
+        always {
+            echo "This will always run"
+        }
+        success {
+            echo "This will run only if successful"
+        }
+        failure {
+            echo "This will run only if failed"
+        }
+        unstable {
+            echo "This will run only if the run wae marked as unstable"
+        }
+        changed {
+            echo "This will run only if the state of the pipeline changed"
+        }
+    }
 
 }
