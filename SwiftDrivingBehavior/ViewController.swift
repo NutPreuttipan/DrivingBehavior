@@ -44,7 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         
-        print("Test scm pulling from jenkins")
+        print("Test scm pulling from jenkins 2")
         super.viewDidLoad()
         
         ref = Database.database().reference().child(UserDefaults.standard.value(forKey: "deviceName") as! String)
